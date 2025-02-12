@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konversi Suhu</title>
-    <link rel="icon" href="asset/retweet.png" type="image/png">
+    <link rel="icon" href="asset/Logo-Mini-Project-RevoU.png" type="image/png">
+    <link href="https://fonts.cdnfonts.com/css/freemono" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div class="container">
-        <img src="asset/retweet.png" alt="logo aplikasi" width="125">
+        <img src="asset/Logo-Mini-Project-RevoU.png" alt="logo aplikasi" width="125">
         <h1>Konversi Suhu</h1>
 
         <hr>
 
-        <p>Masukkan suhu derajat <span id="unit-label">Celsius (°C)</span> ke kotak dibawah,<br>
-            lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk <span id="converted-unit-label">Fahrenheit (°F)</span>.</p>
+        <p>Masukkan suhu derajat <span id="unit-label">Celsius (°C)</span> ke kotak dibawah, lalu klik tombol Konversi <br> untuk mendapatkan hasil konversi dalam bentuk <span id="converted-unit-label">Fahrenheit (°F)</span>.</p>
         
         <br>
 
         <label for="inputValue"><span id="unit-label-2">Celsius (°C)</span>:</label><br>
-        <textarea id="inputValue"></textarea>
+        <textarea id="inputValue" onkeypress="return isNumberKey(event)"></textarea>
         
         <br>
         <button onclick="convert()">Konversi</button>
         <button onclick="reset()">Reset</button>
-        <button onclick="reverse()">Reverse</button>
+        <button onclick="toggleConversion(), convert()">Reverse</button>
         
         <br><br>
         <label for="outputValue"><span id="converted-unit-label-2">Fahrenheit (°F)</span>:</label><br>
@@ -37,7 +37,7 @@
         <textarea id="calculation" readonly></textarea>
 
         <br><br><br>
-        <a href="#" id="toggle-link" onclick="toggleConversion()">Fahrenheit ke Celsius</a>
+        <a href="#" id="toggle-link" onclick="toggleConversion(), reset()" title="ubah konversi">Fahrenheit ke Celsius</a>
         
         <hr>
 

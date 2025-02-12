@@ -1,6 +1,21 @@
 let isCelsiusToFahrenheit = true;
+
+function isNumberKey(evt) {
+  let charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode !== 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+  }
+  return true;
+}
+
 function convert() {
   let inputValue = parseFloat(document.getElementById("inputValue").value);
+  if (isNaN(inputValue)) {
+    document.getElementById("outputValue").value = "";
+    document.getElementById("calculation").value = "";
+    return;
+}
+
   let outputValue;
   
   if (isCelsiusToFahrenheit) {
@@ -18,14 +33,6 @@ function reset() {
   document.getElementById("inputValue").value = "";
   document.getElementById("outputValue").value = "";
   document.getElementById("calculation").value = "";
-}
-
-function reverse() {
-  let outputValue = parseFloat(document.getElementById("outputValue").value);
-  if (!isNaN(outputValue)) {
-      document.getElementById("inputValue").value = outputValue;
-      convert();
-  }
 }
 
 function toggleConversion() {
