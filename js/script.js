@@ -29,6 +29,15 @@ function convert() {
   document.getElementById("outputValue").value = outputValue;
 }
 
+function convertWithValidation() {
+  let inputValue = document.getElementById("inputValue").value.trim();
+  if (inputValue === "") {
+      alert("Harap masukkan nilai suhu sebelum melakukan konversi.");
+      return;
+  }
+  convert();
+}
+
 function reset() {
   document.getElementById("inputValue").value = "";
   document.getElementById("outputValue").value = "";
